@@ -1,0 +1,9 @@
+<resources>
+    <string name="device_id">DeviceId:</string>
+    <string name="app_id">AppId:</string>
+    <string name="channel">Channel:</string>
+    
+    <string name="app_name">DroiSMSDemo</string>
+    <string name="droi_example_fragment">进入UI界面</string>
+    <string name="droi_example_fragment2">进入UI界面(不可修改)</string>
+</resources>
