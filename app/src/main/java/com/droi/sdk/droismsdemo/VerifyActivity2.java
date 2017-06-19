@@ -22,7 +22,7 @@ public class VerifyActivity2 extends FragmentActivity implements OnDroiSmsFragme
         FragmentTransaction transaction = fm.beginTransaction();
         smsFragment = fm.findFragmentById(R.id.main_container);
         if (smsFragment == null) {
-            smsFragment = DroiSmsFragment.newInstance("18516673469", "template2", false);
+            smsFragment = DroiSmsFragment.newInstance("18516673469", "template1", false);
             transaction.replace(R.id.main_container, smsFragment);
             transaction.commit();
         }

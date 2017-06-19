@@ -8,18 +8,15 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
+        <!--请更换为您自己的appid-->
         <meta-data
             android:name="com.droi.sdk.application_id"
-            android:value="stuvmbzhWLq0T6hdZoNPt1Z6-4-pGz1OlQD--oYL" />
-        <meta-data
-            android:name="com.droi.sdk.platform_key"
-            android:value="pZgqoe2JVQmq5DM5uMv1m1E30UAJgHj0m1E30UAJ" />
+            android:value="91ivmbzhr4eAOFbexJ2fjz-ScAKDDiKJlQBAiNsW" />
+
         <meta-data
             android:name="com.droi.sdk.channel_name"
             android:value="DROI_CHANNEL1" />
-<!--        <meta-data
-            android:name="com.droi.sdk.server"
-            android:value="http://10.0.10.213:18080/ip_list" />-->
 
         <activity
             android:name=".MainActivity"
@@ -29,12 +26,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".VerifyActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
+
         <activity
             android:name=".VerifyActivity2"
             android:configChanges="orientation|keyboardHidden|screenSize" />
+
     </application>
 
 </manifest>

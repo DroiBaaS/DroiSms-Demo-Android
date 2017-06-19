@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.droi.sdk.DroiError;
 import com.droi.sdk.core.Core;
 import com.droi.sdk.core.SmsCoreHelper;
 import com.droi.sdk.sms.DroiSms;
@@ -75,13 +76,14 @@ public class MainActivity extends Activity {
                 if (phone != null) {
                     phoneNumber = phone.getText().toString();
                     countryCode = country.getText().toString();
+                    Log.i(TAG, countryCode + phoneNumber);
                     HashMap<String, String> extra = new HashMap<String, String>();
                     extra.put("name", "wangyan");
-                    extra.put("time", "中午好");
-                    DroiSms.getSMSCodeWithExtra(countryCode, phoneNumber, "template1", new DroiSmsCallback() {
+                    extra.put("time", "中午");
+                    DroiSms.getSMSCodeWithExtraInBackground(countryCode, phoneNumber, "template2", new DroiSmsCallback() {
                         @Override
-                        public void onResult(DroiSmsError droiSmsError) {
-                            Log.i(TAG, droiSmsError.getErrorCode() + ":" + droiSmsError.getErrorInfo());
+                        public void onResult(DroiError droiSmsError) {
+                            Log.i(TAG, droiSmsError.getCode() + ":" + droiSmsError.getAppendedMessage());
                             if (droiSmsError.isOk()) {
                                 CountDownTimerUtils mCountDownTimerUtils;
                                 mCountDownTimerUtils = new CountDownTimerUtils(60000, 1000);
@@ -89,7 +91,7 @@ public class MainActivity extends Activity {
                                 Toast.makeText(mContext, getString(R.string.droi_sms_get_code_success), Toast.LENGTH_SHORT).show();
                             } else {
                                 String errorInfo;
-                                switch (droiSmsError.getErrorCode()) {
+                                switch (droiSmsError.getCode()) {
                                     case DroiSmsError.ERROR:
                                         errorInfo = getString(R.string.droi_sms_error);
                                         break;
@@ -122,15 +124,15 @@ public class MainActivity extends Activity {
                 if (phone != null && code != null) {
                     phoneNumber = phone.getText().toString();
                     codeValue = code.getText().toString();
-                    DroiSms.verifySMSCode(phoneNumber, codeValue, new DroiSmsCallback() {
+                    DroiSms.verifySMSCodeInBackground(phoneNumber, codeValue, new DroiSmsCallback() {
                         @Override
-                        public void onResult(DroiSmsError droiSmsError) {
-                            Log.i(TAG, droiSmsError.getErrorCode() + ":" + droiSmsError.getErrorInfo());
+                        public void onResult(DroiError droiSmsError) {
+                            Log.i(TAG, droiSmsError.getCode() + ":" + droiSmsError.getAppendedMessage());
                             if (droiSmsError.isOk()) {
                                 Toast.makeText(mContext, getString(R.string.droi_sms_verify_success), Toast.LENGTH_SHORT).show();
                             } else {
                                 String errorInfo;
-                                switch (droiSmsError.getErrorCode()) {
+                                switch (droiSmsError.getCode()) {
                                     case DroiSmsError.ERROR:
                                         errorInfo = getString(R.string.droi_sms_error);
                                         break;

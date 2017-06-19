@@ -6,11 +6,12 @@ import com.droi.sdk.core.Core;
 import com.droi.sdk.sms.DroiSms;
 
 public class MyApplication extends Application {
+
     @Override
     public void onCreate() {
         super.onCreate();
         Core.initialize(this);
-        DroiSms.initialize(this);
-        //DroiUpdate.setUpdateOnlyWifi(true);
+        // 由于短信需要收费，请使用您自己的appId和apikey
+        DroiSms.initialize(this,"您的apikey");
     }
 }
