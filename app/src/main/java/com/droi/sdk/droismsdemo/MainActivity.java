@@ -98,9 +98,6 @@ public class MainActivity extends Activity {
                                     case DroiSmsError.ILLEGAL_PHONE_NO:
                                         errorInfo = getString(R.string.droi_sms_error_illegal_phone_num);
                                         break;
-                                    case DroiSmsError.CONNECTION_SERVER_ERROR:
-                                        errorInfo = getString(R.string.droi_sms_error_connection);
-                                        break;
                                     case DroiSmsError.OVER_LIMIT:
                                         errorInfo = getString(R.string.droi_sms_error_over_limit);
                                         break;
@@ -138,9 +135,6 @@ public class MainActivity extends Activity {
                                         break;
                                     case DroiSmsError.ILLEGAL_PHONE_NO:
                                         errorInfo = getString(R.string.droi_sms_error_illegal_phone_num);
-                                        break;
-                                    case DroiSmsError.CONNECTION_SERVER_ERROR:
-                                        errorInfo = getString(R.string.droi_sms_error_connection);
                                         break;
                                     case DroiSmsError.SMS_CODE_EMPTY:
                                         errorInfo = getString(R.string.droi_sms_error_code_empty);
