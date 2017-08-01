@@ -38,6 +38,6 @@ dependencies {
     //compile(name: 'sms-1.1.002', ext: 'aar')
     compile 'com.droi.sdk:Core:+'
     compile 'com.droi.sdk:sms:+'
-    compile 'com.squareup.okhttp3:okhttp:3.0.1'
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
     compile 'com.android.support:support-v4:25.1.1'
 }
